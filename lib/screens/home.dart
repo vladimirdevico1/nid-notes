@@ -18,7 +18,17 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Center(
-            child: Text('Home'),
+            child: Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    userBloc.logout();
+                    Navigator.of(context).pushReplacementNamed('/login');
+                  },
+                  child: Text('Logout'),
+                )
+              ],
+            ),
           ),
         ),
       ),
