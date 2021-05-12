@@ -3,7 +3,14 @@ import 'package:nid_notes/screens/home.dart';
 import 'package:nid_notes/screens/login.dart';
 import 'package:nid_notes/screens/splash.dart';
 
-void main() {
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final Future<Database> database = openDatabase(
+    join(await getDatabasesPath(), 'nid_notes.db'),
+  );
   runApp(NIDNotes());
 }
 
