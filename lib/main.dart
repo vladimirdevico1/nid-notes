@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:nid_notes/helper/database.dart';
 import 'package:nid_notes/screens/home.dart';
 import 'package:nid_notes/screens/login.dart';
 import 'package:nid_notes/screens/splash.dart';
 
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
-
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
-  final Future<Database> database = openDatabase(
-    join(await getDatabasesPath(), 'nid_database.db'),
-  );
-
   runApp(NIDNotes());
 }
 

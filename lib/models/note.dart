@@ -1,11 +1,16 @@
 class Note {
-  final int id;
-  final string title;
-  final string content;
+  final int? id;
+  final String title;
+  final String content;
 
-  Note(this.id, this.title, this.content);
+  Note(this.title, this.content, {this.id});
 
-  // Note([this.id, this.title, this.content]); Opzionali ma in fila
-  // Note({this.id, this.title, this.content}); Opzionali ma in richiamabili con nominativo
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'title': title,
+      'content': content,
+    };
+  }
 
 }
